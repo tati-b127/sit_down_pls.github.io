@@ -12,7 +12,7 @@ const uglify = require('gulp-uglify-es').default;
 const sourcemaps = require('gulp-sourcemaps');
 const browsersync = require('browser-sync').create();
 const fileInclude = require('gulp-file-include');
-const autoprefixer = require('gulp-autoprefixer');
+// const autoprefixer = require('gulp-autoprefixer');
 const del = require('del'); 
 
 const fonts = () => {
