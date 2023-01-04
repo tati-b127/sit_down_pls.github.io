@@ -1,193 +1,201 @@
 @mixin ghost {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
 }
 @mixin hidden {
-    position: absolute;
-    visibility: hidden;
-    pointer-events: none;
-    overflow: hidden;
-    opacity: 0;
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0;
 }
 @mixin visible {
-    pointer-events: visible;
-    visibility: visible;
-    clip: initial;
-    overflow: visible;
-    margin: initial;
-    opacity: 1;
+  pointer-events: visible;
+  visibility: visible;
+  clip: initial;
+  overflow: visible;
+  margin: initial;
+  opacity: 1;
 }
 @mixin btnReset {
-    font-family: 'open_sans', sant-serif;
-	padding: 0;
-	margin: 0;
-	border: none;
-	background-color: transparent;
-	border-radius: 0;
-	appearance: none;
-	display: inline-block;
-    cursor: pointer;
+  font-family: "open_sans", sant-serif;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: transparent;
+  border-radius: 0;
+  appearance: none;
+  display: inline-block;
+  cursor: pointer;
 }
 @mixin listReset {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 @mixin linkReset {
-    text-decoration: none;
-    &:focus-visible {
-        border: none;
-        outline: none;
-    }
-    &:focus {
-        border: none;
-        outline: none;
-    }
-
+  text-decoration: none;
+  &:focus-visible {
+    border: none;
+    outline: none;
+  }
+  &:focus {
+    border: none;
+    outline: none;
+  }
 }
 @mixin flex-column {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 @mixin flex-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 @mixin choice {
-    .itc-select {
-        &__toggle {
-            min-width: 100px;
-            height: 100%;
-            font-style: normal;
-            color: $color-A65CF0;
-            background-color: transparent;
-            border: none;
-            transition: color 0.2s ease-in;
-            &::after {
-                width: 13px;
-                margin-top: 5px;
-                background-size: contain;
-                background-position: center center;
-                background-repeat: no-repeat;
-                background-image: url(./images/svg/select-arrow.svg);
-            }
-            &:hover {
-                color: $color-C998FB;
-            }
-            &:focus-visible {
-                background-color: $color-EBD1FF;
-            }
-        }
-        &__dropdown {
-            min-width: 84px;
-            top: 100%;
-            border: 2px solid $color-F6F6F6;
-            border-radius: 0;
-        }
-        &__option {
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 130%;
-            color: $color-333333;
-            &:hover {
-                color: $color-7033AC;
-                background-color: transparent;
-            }
-        }
-        &__option_selected {
-            display: none;
-        }
+  .itc-select {
+    &__toggle {
+      min-width: 100px;
+      height: 100%;
+      font-style: normal;
+      color: $color-A65CF0;
+      background-color: transparent;
+      border: none;
+      transition: color 0.2s ease-in;
+      &::after {
+        width: 13px;
+        margin-top: 5px;
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url(./images/svg/select-arrow.svg);
+      }
+      &:hover {
+        color: $color-C998FB;
+      }
+      &:focus-visible {
+        background-color: $color-EBD1FF;
+      }
     }
-    
+    &__dropdown {
+      min-width: 84px;
+      top: 100%;
+      border: 2px solid $color-F6F6F6;
+      border-radius: 0;
+    }
+    &__option {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+      color: $color-333333;
+      &:hover {
+        color: $color-7033AC;
+        background-color: transparent;
+      }
+    }
+    &__option_selected {
+      display: none;
+    }
+  }
 }
 @mixin input {
-    outline: none;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 120%;
-    color: $color-333333;
-    border: 2px solid transparent;
+  outline: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  color: $color-333333;
+  border: 2px solid transparent;
+  background-color: $color-F6F6F6;
+  transition: background-color 0.3s ease-in;
+  &::placeholder {
+    color: $color-999999;
+  }
+  &:hover:not(:active) {
+    background-color: $color-EAEAEA;
+  }
+  &:focus-within:not(:active) {
+    border: 2px solid $color-A65CF0;
     background-color: $color-F6F6F6;
-    transition: background-color 0.3s ease-in;
-    &::placeholder {
-        color: $color-999999;
-    }
-    &:hover:not(:active) {
-        background-color: $color-EAEAEA;
-    }
-    &:focus-within:not(:active) {
-        border: 2px solid $color-A65CF0;
-        background-color: $color-F6F6F6;
-    }
-    &:active {
-        color: $color-333333;
-        background-color: $color-F6F6F6;
-    }
+  }
+  &:active {
+    color: $color-333333;
+    background-color: $color-F6F6F6;
+  }
 }
 @mixin btnAction {
-    border: 2px solid transparent;
-    border-radius: 10px;
-    padding: 20px 30px;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 100%;
-    text-align: center;
-    color: $color-FFFFFF;
-    background-color: $color-A65CF0;
-    transition: all 0.2s ease-in;
-    &:hover {
-        background-color: $color-C998FB;
-    }
-    &:focus-visible {
-        background-color: $color-C998FB;
-        border-color: $color-7033AC;
-    }
-    &:active {
-        background-color: $color-7033AC;
-        border-color: $color-7033AC;
-    }
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 20px 30px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+  text-align: center;
+  color: $color-FFFFFF;
+  background-color: $color-A65CF0;
+  transition: background-color 0.2s ease-in, border-color 0.2s ease-in;
+  &:hover {
+    background-color: $color-C998FB;
+  }
+  &:focus-visible {
+    background-color: $color-C998FB;
+    border-color: $color-7033AC;
+  }
+  &:active {
+    background-color: $color-7033AC;
+    border-color: $color-7033AC;
+  }
 }
 @mixin btnBye {
-    border: 2px solid $color-A65CF0;
-    border-radius: 10px;
-    padding: 17px 35px;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 100%;
-    text-align: center;
-    color: $color-A65CF0;
-    background-color: transparent;
-    transition: all 0.2s ease-in;
-    &:hover {
-        color: $color-FFFFFF;
-        background-color: $color-A65CF0;
-    }
-    &:focus-visible {
-        color: $color-FFFFFF;
-        background-color: $color-C998FB;
-        border-color: $color-A65CF0;
-    }
-    &:active {
-        color: $color-FFFFFF;
-        background-color: $color-7033AC;
-        border-color: $color-7033AC;
-    }
+  border: 2px solid $color-A65CF0;
+  border-radius: 10px;
+  padding: 17px 35px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  text-align: center;
+  color: $color-A65CF0;
+  background-color: transparent;
+  transition: color 0.2s ease-in, background-color 0.2s ease-in, border-color 0.2s ease-in;
+  &:hover {
+    color: $color-FFFFFF;
+    background-color: $color-A65CF0;
+  }
+  &:focus-visible {
+    color: $color-FFFFFF;
+    background-color: $color-C998FB;
+    border-color: $color-A65CF0;
+  }
+  &:active {
+    color: $color-FFFFFF;
+    background-color: $color-7033AC;
+    border-color: $color-7033AC;
+  }
 }
 @mixin sectionTilte {
-    margin: 0;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 100%;
-    color: $color-333333;
-    margin-bottom: 26px;
+  margin: 0;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 100%;
+  color: $color-333333;
+  margin-bottom: 26px;
 }
 @mixin goodTitle {
-    font-weight: 400;
-    font-size: 24px;
-    color: $color-333333;
+  font-weight: 400;
+  font-size: 24px;
+  color: $color-333333;
 }

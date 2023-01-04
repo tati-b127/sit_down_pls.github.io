@@ -54,12 +54,12 @@ const stylesDev = () => {
     .pipe(dest('dist/'))
     .pipe(browsersync.stream())
 }
-const htmlMinify = () => {
-    return src('src/**/*.html')
-    .pipe(htmlMin({collapseWhitespace: true}))
-    .pipe(dest('dist/'))
-    .pipe(browsersync.stream())
-}
+// const htmlMinify = () => {
+//     return src('src/**/*.html')
+//     .pipe(htmlMin({collapseWhitespace: true}))
+//     .pipe(dest('dist/'))
+//     .pipe(browsersync.stream())
+// }
 
 const svgSprites = () => {
     return src('src/img/svg/**/*.svg')
@@ -113,12 +113,13 @@ const scriptsDev = () => {
     .pipe(browsersync.stream())
 }
 
-const htmlInclude = () => {
-    return src(['src/partials/*.html'])
+const html = () => {
+    return src(['src/*.html'])
     .pipe(fileInclude({
       prefix: '@@',
       basepath: '@file'
     }))
+    .pipe(htmlMin({collapseWhitespace: true}))
     .pipe(dest('dist/'))
     .pipe(browsersync.stream());
 }
@@ -131,7 +132,7 @@ const watchFiles = () => {
     })
 }
 
-watch('src/**/*.html', htmlMinify)
+// watch('src/**/*.html', htmlMinify)
 watch('src/fonts/**', fonts)
 watch('src/styles/**/*.scss', styles)
 watch('src/styles/**/*.css', styles)
@@ -140,19 +141,20 @@ watch('src/styles/**/*.css', stylesDev)
 watch('src/img/svg/**/*.svg', svgSprites)
 watch('src/js/**/*.js', scripts)
 watch('src/js/**/*.js', scriptsDev)
-watch('src/partials/**/*.html', htmlInclude);
+watch('src/*.html', html);
 watch('src/img/**/*.png', images)
 watch('src/img/**/*.jpg', images)
+watch('src/img/**/*.svg', images)
 
 exports.styles = styles
 exports.styles = stylesDev
-exports.htmlMinify = htmlMinify
+// exports.htmlMinify = htmlMinify
 exports.scripts = scripts
 exports.scriptsDev = scriptsDev
 exports.clean = clean
-exports.htmlInclude = htmlInclude
+exports.html = html
 exports.images = images
 exports.svgSprites = svgSprites
 
-exports.default = series(clean, htmlInclude, htmlMinify, fonts, scripts, styles, images, svgSprites, watchFiles)
-exports.dev = series(clean, htmlInclude, htmlMinify, fonts, scriptsDev, stylesDev, images, svgSprites, watchFiles)
+exports.default = series(clean, html, fonts, scripts, styles, images, svgSprites, watchFiles)
+exports.dev = series(clean, html, fonts, scriptsDev, stylesDev, images, svgSprites, watchFiles)

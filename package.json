@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "default",
-    "dev": "dev"
+    "build": "gulp default",
+    "dev": "gulp dev",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "repository": {
     "type": "git",

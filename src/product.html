@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('partials/head.html')
+
+<body>
+    @@include('partials/header.html')
+    <main>
+        <div class="product container">
+            <div class="product__bread-crumbs bread-crumbs">
+                <ul class="bread-crumbs__list">
+                    <li class="bread-crumbs__item">
+                        <a class="bread-crumbs__link" href="index.html">Главная</a>
+                    </li>
+                    <li class="bread-crumbs__item">
+                        <a class="bread-crumbs__link" href="catalog.html">Каталог</a>
+                    </li>
+                    <li class="bread-crumbs__item">
+                        <a class="bread-crumbs__link" href="#">Диваны</a>
+                    </li>
+                    <li class="bread-crumbs__item">
+                        <a class="bread-crumbs__link" href="#">Прямые диваны</a>
+                    </li>
+                    <li class="bread-crumbs__item">
+                        <a class="bread-crumbs__link" href="#">D-31</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="product__flex">
+                <div class="product__overlay">
+                    <div class="product__container">
+                        <div class="product__modal product__modal_swiper">
+                            <button class="product__modal-cls">
+                                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15.6 8.3999L8.40002 15.5999" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8.40002 8.3999L15.6 15.5999" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>                                  
+                            </button>
+                            @@include('partials/modal-swiper.html')
+                        </div>
+                        <div class="product__modal product__modal_bye">
+                            <button class="product__modal-cls">
+                                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15.6 8.3999L8.40002 15.5999" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8.40002 8.3999L15.6 15.5999" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>                                  
+                            </button>
+                            <h3 class="product__modal-title">Купить в один клик</h3>
+                            <p class="product__modal-desc">
+                                Чтобы оформить заказ — заполните формы ниже и наш менеджер свяжется с вами в течении часа.
+                            </p>
+                            <form class="callback__form" id="form-bye" method="post">
+                                <div class="callback__area-input">
+                                    <input class="callback__input" id="name" type="text" name="name" placeholder="Как вас зовут?">
+                                </div>
+                                <div class="callback__area-input">
+                                    <input class="callback__input" id="phone" type="tel" name="phone" placeholder="Ваш телефон">
+                                </div>
+                                <button class="callback__btn" type="submit">Отправить</button>
+                                <div class="callback__area-input">
+                                    <label class="callback__label">
+                                        <input class="callback__checkbox" id="agreement" type="checkbox" name="agree" checked>
+                                        <span class="callback__check"></span>
+                                        Принимаю
+                                        <a class="callback__link" href="#">пользовательское соглашение</a>
+                                    </label>
+                                </div>
+                            </form>                
+                        </div>
+                        <div class="product__modal product__modal_callback">
+                            <button class="product__modal-cls">
+                                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15.6 8.3999L8.40002 15.5999" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8.40002 8.3999L15.6 15.5999" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>                                  
+                            </button>
+                            <img src="./images/svg/callback-logo.svg" alt="Логотип">
+                            <h4 class="product__title">Спасибо, мы вам перезвоним!</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="product__block product__block_1">
+                    @@include('partials/modal-swiper.html')
+                    <div class="product__block-title">
+                        <div class="product__rating goods__rating">4,8</div>
+                        <h2 class="product__name goods__item-title">Диван тканевый прямой “D-31”</h2>
+                        <p class="product__subname">Мини 120&nbsp;см без ящика Stark синий (Рогожка)</p>
+                        <div class="product__price goods__price">28 490 руб</div>
+                        <button class="product__btn-bye">Купить в один клик</button>
+                        <button class="product__btn-add-shopping-cart">+ Добавить в корзину</button>   
+                    </div>
+                    <div class="product__descr">
+                        <h4 class="product__subtitle">Опорный механизм</h4>
+                        <p class="product__desc">Опорный механизм напоминает пантограф, к&nbsp;которому добавили
+                            дополнительную секцию. У&nbsp;опорного дивана сиденье &laquo;выпрыгивает&raquo; вперёд
+                            и&nbsp;вытаскивает вторую часть спального места. Заключительный штрих&nbsp;&mdash; опустить
+                            спинку.
+                            Этот механизм не&nbsp;портит пол и&nbsp;не&nbsp;боится ковров. Требуется чуть больше силы,
+                            чтобы разложить диван, но&nbsp;подросток справится.
+                        </p>
+                        <img class="product__img-exp" src="./images/card-1920-sofa-D31-exp.png"
+                            alt="Механизм раскладки">
+                    </div>
+                </div>
+                <div class="product__block product__block_2">
+                    <div class="product__block-title">
+                        <div class="product__rating goods__rating">4,8</div>
+                        <h2 class="product__name goods__item-title">Диван тканевый прямой “D-31”</h2>
+                        <p class="product__subname">Мини 120&nbsp;см без ящика Stark синий (Рогожка)</p>
+                        <div class="product__price goods__price">28 490 руб</div>
+                        <button class="product__btn-bye">Купить в один клик</button>
+                        <button class="product__btn-add-shopping-cart">+ Добавить в корзину</button>   
+                    </div>
+                    <ul class="product__list attribute">
+                        <li class="attribute__item">
+                            <span class="attribute__name">
+                                <span class="attribute__bg">Гарантия</span>
+                            </span>
+                                <span class="attribute__dot"></span>
+                            <span class="attribute__value">18 месяцев</span>
+                        </li>
+                        <li class="attribute__item">
+                            <span class="attribute__name">
+                                <span class="attribute__bg">Артикул</span>
+                            </span>
+                                <span class="attribute__dot"></span>
+                            <span class="attribute__value">AAA41269004</span>
+                        </li>
+                        <li class="attribute__item">
+                            <span class="attribute__name">
+                                <span class="attribute__bg">Длина</span>
+                            </span>
+                                <span class="attribute__dot"></span>
+                            <span class="attribute__value">163 см</span>
+                        </li>
+                        <li class="attribute__item">
+                            <span class="attribute__name">
+                                <span class="attribute__bg">Высота</span>
+                            </span>
+                                <span class="attribute__dot"></span>
+                            <span class="attribute__value">90 см</span>
+                        </li>
+                        <li class="attribute__item">
+                            <span class="attribute__name">
+                                <span class="attribute__bg">Глубина</span>
+                            </span>
+                                <span class="attribute__dot"></span>
+                            <span class="attribute__value">108 см</span>
+                        </li>
+                        <li class="attribute__item">
+                            <span class="attribute__name">
+                                <span class="attribute__bg">Спальное место</span>
+                            </span>
+                                <span class="attribute__dot"></span>
+                            <span class="attribute__value">200 см х 125 см</span>
+                        </li>
+                        <li class="attribute__item">
+                            <span class="attribute__name">
+                                <span class="attribute__bg">Высота посадки</span>
+                            </span>
+                                <span class="attribute__dot"></span>
+                            <span class="attribute__value">45 см</span>
+                        </li>
+                        <li class="attribute__item">
+                            <span class="attribute__name">
+                                <span class="attribute__bg">Механизм</span>
+                            </span>
+                                <span class="attribute__dot"></span>
+                            <span class="attribute__value">Опорный</span>
+                        </li>
+                        <li class="attribute__item">
+                            <span class="attribute__name">
+                                <span class="attribute__bg">Тип обивки</span>
+                            </span>
+                                <span class="attribute__dot"></span>
+                            <span class="attribute__value">Рогожка</span>
+                        </li>
+                        <li class="attribute__item">
+                            <span class="attribute__name">
+                                <span class="attribute__bg">Цвет</span>
+                            </span>
+                                <span class="attribute__dot"></span>
+                            <span class="attribute__value">Синий</span>
+                        </li>
+                        <li class="attribute__item">
+                            <span class="attribute__name">
+                                <span class="attribute__bg">Наполнитель</span>
+                            </span>
+                                <span class="attribute__dot"></span>
+                            <span class="attribute__value">Независимый пружинный блок</span>
+                        </li>
+                        <li class="attribute__item">
+                            <span class="attribute__name">
+                                <span class="attribute__bg">Материал каркаса</span>
+                            </span>
+                                <span class="attribute__dot"></span>
+                            <span class="attribute__value">Металл. рама с дерев. латами</span>
+                        </li>
+                        <li class="attribute__item">
+                            <span class="attribute__name">
+                                <span class="attribute__bg">Количество мест</span>
+                            </span>
+                                <span class="attribute__dot"></span>
+                            <span class="attribute__value">Двухместные</span>
+                        </li>
+                        <li class="attribute__item">
+                            <span class="attribute__name">
+                                <span class="attribute__bg">Категория</span>
+                            </span>
+                                <span class="attribute__dot"></span>
+                            <span class="attribute__value">Прямые тканевые диваны</span>
+                        </li>
+                        <li class="attribute__item">
+                            <span class="attribute__name">
+                                <span class="attribute__bg">Возврат</span>
+                            </span>
+                                <span class="attribute__dot"></span>
+                            <span class="attribute__value">Условия</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="product__similar container">
+            <div class="product__similar-block">
+                <h2 class="product__similar-title">Похожие товары</h2>
+                <div class="product__btn-block">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+            <div class="swiper product__swiper" id="swiper4">
+                <div class="swiper-wrapper product__wrapper">
+                    <div class="swiper-slide product__slide product__slide_1">
+                        <div class="goods__item" id="R-85">
+                            <div class="goods__rating">4,5</div>
+                            <div class="goods__img"></div>
+                            <h3 class="goods__item-title">Диван велюровый</h3>
+                            <h3 class="goods__item-title goods__item-title_partNumber">
+                                “R-85”
+                            </h3>
+                            <div class="goods__price">34 990 руб</div>
+                            <a href="#" class="goods__btn">Купить</a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide product__slide product__slide_2">
+                        <div class="goods__item" id="H-58">
+                            <div class="goods__rating">4,6</div>
+                            <div class="goods__img"></div>
+                            <h3 class="goods__item-title">Диван флоковый</h3>
+                            <h3 class="goods__item-title goods__item-title_partNumber">
+                                “H-58”
+                            </h3>
+                            <div class="goods__price">23 990 руб</div>
+                            <a href="#" class="goods__btn">Купить</a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide product__slide product__slide_3">
+                        <div class="goods__item" id="S-44">
+                            <div class="goods__rating">4,5</div>
+                            <div class="goods__img"></div>
+                            <h3 class="goods__item-title">Диван велюровый</h3>
+                            <h3 class="goods__item-title goods__item-title_partNumber">
+                                “S-44”
+                            </h3>
+                            <div class="goods__price">19 990 руб</div>
+                            <a href="#" class="goods__btn">Купить</a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide product__slide product__slide_4">
+                        <div class="goods__item" id="V-43">
+                            <div class="goods__rating">4,8</div>
+                            <div class="goods__img"></div>
+                            <h3 class="goods__item-title">Диван шиниловый</h3>
+                            <h3 class="goods__item-title goods__item-title_partNumber">
+                                “V-43”
+                            </h3>
+                            <div class="goods__price">19 990 руб</div>
+                            <a href="#" class="goods__btn">Купить</a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide product__slide product__slide_5">
+                        <div class="goods__item" id="C-42">
+                            <div class="goods__rating">4,6</div>
+                            <div class="goods__img"></div>
+                            <h3 class="goods__item-title">Диван из шинила</h3>
+                            <h3 class="goods__item-title goods__item-title_partNumber">
+                                “C-42”
+                            </h3>
+                            <div class="goods__price">18 990 руб</div>
+                            <a href="#" class="goods__btn">Купить</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    @@include('partials/footer.html')
+</body>
+
+</html>

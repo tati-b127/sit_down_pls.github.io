@@ -151,7 +151,7 @@
 //         "sale": "-700",
 //         "newPrice": "1 390",
 //     },
-                        
+
 // ]
 // class Good {
 //     constructor(props) {
@@ -233,6 +233,19 @@
 //     // blockOfSales.append(saleCard)
 // }
 document.addEventListener('DOMContentLoaded', () => {
+    const burger = document.querySelector('.header__burger')
+    const burgerCls = document.querySelector('.header__burger-cls')
+    const menu = document.querySelector('.header__burger-menu')
+
+    burger.addEventListener('click', () => {
+        menu.classList.toggle('burger-active')
+        console.log(menu)
+    })
+    burgerCls.addEventListener('click', () => {
+        menu.classList.toggle('burger-active')
+    })
+
+
     const goodsItems = document.querySelectorAll('.goods__item')
     console.log(goodsItems)
     const btnMore = document.querySelector('.goods__btn-more')
@@ -245,36 +258,83 @@ document.addEventListener('DOMContentLoaded', () => {
         itemsNextToShow = 3
     }
     if (width < 968) {
-        itemsToShow  = 6
+        itemsToShow = 6
         itemsNextToShow = 4
+    }
+
+    const catalogGoods = document.querySelector('.catalog__goods')
+    const catalogBtns = document.querySelectorAll('.catalog__btn')
+    if (catalogGoods) {
+        itemsToShow = 9
+        itemsNextToShow = 9
+        if (width < 850) {
+            itemsToShow = 6
+            itemsNextToShow = 6
+        }
+
+        const arrCatalogGoods = Array.from(goodsItems)
+        const showItems = arrCatalogGoods.slice(itemsToShow, itemsNextToShow)
+        console.log(catalogBtns)
+        console.log(arrCatalogGoods.length)
+        console.log(showItems)
+        catalogBtns[0].classList.add('catalog__btn-active')
+
+        for (let btn of catalogBtns) {
+            btn.addEventListener('click', () => {
+                catalogBtns.forEach(item => item.classList.remove('catalog__btn-active'));
+                btn.classList.toggle('catalog__btn-active')
+                console.log(btn)
+                console.log(btn.id)
+                if (btn.id === "catalog__btn_1") {
+                    for (let i = 0; i < arrCatalogGoods.length; i++) {
+                        console.log(arrCatalogGoods.length)
+                        arrCatalogGoods[i].classList.add('hidden')
+                    }
+                    for (let i = 0; i < itemsToShow; i++) {
+                        console.log(arrCatalogGoods[i])
+                        arrCatalogGoods[i].classList.remove('hidden')
+                    }
+                } else if (btn.id === "catalog__btn_2") {
+                    for (let i = 0; i < arrCatalogGoods.length; i++) {
+                        console.log(arrCatalogGoods[i])
+                        arrCatalogGoods[i].classList.add('hidden')
+                    }
+                    for (let i = itemsToShow; i < itemsToShow + itemsNextToShow; i++) {
+                        console.log(arrCatalogGoods[i])
+                        arrCatalogGoods[i].classList.remove('hidden')
+                    }
+                } else if (btn.id === "catalog__btn_3") {
+                    for (let i = 0; i < arrCatalogGoods.length; i++) {
+                        console.log(arrCatalogGoods[i])
+                        arrCatalogGoods[i].classList.add('hidden')
+                    }
+                    for (let i = itemsToShow * 2; i < itemsToShow * 2 + itemsNextToShow; i++) {
+                        console.log(arrCatalogGoods[i])
+                        arrCatalogGoods[i].classList.remove('hidden')
+                    }
+                }
+            })
+        }
     }
     const itemslength = goodsItems.length;
 
-    for (i = itemsToShow; i < itemslength; i++) {
+    for (let i = itemsToShow; i < itemslength; i++) {
         goodsItems[i].classList.add('hidden')
         console.log(i)
     }
-    btnMore.addEventListener('click', () => {
-        itemsToShow += itemsNextToShow;
-        const arrGoods = Array.from(goodsItems)
-        const visitTems = arrGoods.slice(0, itemsToShow)
-        console.log(arrGoods)
-        visitTems.forEach(el => el.classList.remove('hidden'))
-        if (itemslength === visitTems.length) {
-            btnMore.classList.add('hidden')
-        }
-    })
 
-    const burger = document.querySelector('.header__burger')
-    const burgerCls = document.querySelector('.header__burger-cls')
-    const menu = document.querySelector('.header__burger-menu')
+    if (btnMore) {
+        btnMore.addEventListener('click', () => {
+            itemsToShow += itemsNextToShow;
+            const arrGoods = Array.from(goodsItems)
+            const visitTems = arrGoods.slice(0, itemsToShow)
+            console.log(arrGoods)
+            visitTems.forEach(el => el.classList.remove('hidden'))
+            if (itemslength === visitTems.length) {
+                btnMore.classList.add('hidden')
+            }
+        })
+    }
 
-    burger.addEventListener('click', () => {
-        menu.classList.toggle('burger-active')
-        console.log(menu)
-    })
-    burgerCls.addEventListener('click', () => {
-        menu.classList.toggle('burger-active')
-    })
-    
-    })
+
+});

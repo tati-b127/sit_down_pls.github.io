@@ -1,143 +1,289 @@
 <!DOCTYPE html>
 <html lang="ru">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="images/svg/favicon.svg" rel="shortcut icon" type="image/x-icon">
-  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" defer></script>
-  <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js" defer></script>
-  <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js" defer></script>
-  <link href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" rel="stylesheet">
-  <link href="fonts/opensans-bold-webfont.woff" rel="preload" as="font" type="font/woff" crossorigin>
-  <link href="fonts/opensans-bold-webfont.woff2" rel="preload" as="font" type="font/woff2" crossorigin>
-  <link href="fonts/opensans-regular-webfont.woff" rel="preload" as="font" type="font/woff" crossorigin>
-  <link href="fonts/opensans-regular-webfont.woff2" rel="preload" as="font" type="font/woff2" crossorigin>
-  <link href="fonts/opensans-semibold-webfont.woff" rel="preload" as="font" type="font/woff" crossorigin>
-  <link href="fonts/opensans-semibold-webfont.woff2" rel="preload" as="font" type="font/woff2" crossorigin>
-  <link href="fonts/playfairdisplay-black-webfont.woff" rel="preload" as="font" type="font/woff" crossorigin>
-  <link href="fonts/playfairdisplay-black-webfont.woff2" rel="preload" as="font" type="font/woff2" crossorigin>
-  <link href="main.css" rel="stylesheet">
-  <script src="app.js" defer></script>
-  <!-- <link rel="stylesheet" href="itc-custom-select.css"> -->
-  <title>SitDownPls</title>
-</head>
+@@include('partials/head.html')
 
 <body>
     @@include('partials/header.html')
-    <header class="header">
-      <h1 class="header__title hidden">Магазин мебели SitDownPls</h1>
-      <div class="header__top">
-        <div class="container header__flex">
-          <div class="header__select">
-            <span class="header__choice-title">Ваш&nbsp;регион:</span>
-            <div class="header__choice itc-select" id="select-1"></div>
-          </div>
-          <a class="header__phone" href="tel:+74958854547">+7 (495) 885-45-47</a>
-          <div class="header__about">
-            <ul class="header__list">
-              <li class="header__item">
-                <a class="header__link-about" href="#">О компании</a>
-              </li>
-              <li class="header__item">
-                <a class="header__link-about" href="#">Гарантия и возврат</a>
-              </li>
-              <li class="header__item">
-                <a class="header__link-about" href="#">Корпоративным клиентам</a>
-              </li>
-              <li class="header__item">
-                <a class="header__link-about" href="#">Дизайн-решение</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="header__main">
-        <div class="container header__flex">
-            <a href="index.html" class="header__logo-link">
-                <img class="header__logo" src="./images/svg/logo.svg" alt="Логотип компании SitDownPls">
-              </a>
-            <nav class="header__nav">
-            <ul class="header__menu">
-              <li class="header__menu-item">
-                <a class="header__link" href="catalog.html">Каталог</a>
-              </li>
-              <li class="header__menu-item">
-                <a class="header__link" href="#">Магазины</a>
-              </li>
-              <li class="header__menu-item">
-                <a class="header__link" href="#">Шоу-рум</a>
-              </li>
-              <li class="header__menu-item">
-                <a class="header__link" href="#">Доставка и оплата</a>
-              </li>
-              <li class="header__menu-item">
-                <a class="header__link" href="#">Дисконт</a>
-              </li>
-              <li class="header__menu-item">
-                <a class="header__link" href="#">Контакты</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-      <div class="header__bottom">
-        <div class="container header__flex">
-          <div class="header__search search">
-            <form class="search__form" method="post">
-              <div class="search__block">
-                <input class="search__input" id="search" type="search" name="search" placeholder="Я хочу купить...">
-                <button class="search__btn" type="submit"></button>
-              </div>
-              <div class="header__choice search__choice itc-select" id="select-2">
-                <button class="itc-select__toggle" data-index="-1" data-select="toggle" type="button" name="category"
-                  value>
-                  Категория
-                </button>
-                <div class="itc-select__dropdown">
-                  <ul class="itc-select__options">
-                    <li class="itc-select__option" data-index="0" data-select="option" data-value="Диваны">
-                      Диваны
-                    </li>
-                    <li class="itc-select__option" data-index="1" data-select="option" data-value="Кресла">
-                      Кресла
-                    </li>
-                    <li class="itc-select__option" data-index="2" data-select="option" data-value="Пуфы">
-                      Пуфы
-                    </li>
-                    <li class="itc-select__option" data-index="2" data-select="option" data-value="Кровати">
-                      Кровати
-                    </li>
-                    <li class="itc-select__option" data-index="2" data-select="option" data-value="Тумбы">
-                      Тумбы
-                    </li>
-                    <li class="itc-select__option" data-index="2" data-select="option" data-value="Комоды">
-                      Комоды
-                    </li>
-                    <li class="itc-select__option" data-index="2" data-select="option" data-value="Стулья">
-                      Стулья
-                    </li>
-                    <li class="itc-select__option" data-index="2" data-select="option" data-value="Столы">
-                      Столы
-                    </li>
-                    <li class="itc-select__option" data-index="2" data-select="option" data-value="Аксессуары">
-                      Аксессуары
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="header__account">
-            <button class="header__user"></button>
-            <button class="header__shopping-cart"></button>
-          </div>
-        </div>
-      </div>
-    </header>
     <main>
-        @@include('partials/goods.html')
+        <div class="catalog container">
+            <div class="catalog__bread-crumbs bread-crumbs">
+                <ul class="bread-crumbs__list">
+                    <li class="bread-crumbs__item">
+                        <a class="bread-crumbs__link" href="index.html">Главная</a>
+                    </li>
+                    <li class="bread-crumbs__item">
+                        <a class="bread-crumbs__link" href="catalog.html">Каталог</a>
+                    </li>
+                    <li class="bread-crumbs__item">
+                        <a class="bread-crumbs__link" href="#">Диваны</a>
+                    </li>
+                    <li class="bread-crumbs__item">
+                        <a class="bread-crumbs__link" href="#">Прямые диваны</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="catalog__grid">
+                @@include('partials/catalog-aside.html')
+                <div class="catalog__goods goods">
+                    <div class="catalog__selected-title">
+                        <h2 class="catalog__title">Каталог</h2>
+                        <div class="catalog__selected-items">
+                            <div class="catalog__selected-item">
+                                Диваны
+                                <button class="catalog__selected-cls">
+                                    <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="m15.6 8.4-7.2 7.2M8.4 8.4l7.2 7.2" stroke="#666" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                    </svg> 
+                                </button>
+                            </div>
+                            <div class="catalog__selected-item">
+                                До 150 000
+                                <button class="catalog__selected-cls">
+                                    <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="m15.6 8.4-7.2 7.2M8.4 8.4l7.2 7.2" stroke="#666" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                    </svg> 
+                                </button>
+                            </div>
+                            <div class="catalog__selected-item">
+                                Без скидки
+                                <button class="catalog__selected-cls">
+                                    <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="m15.6 8.4-7.2 7.2M8.4 8.4l7.2 7.2" stroke="#666" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                    </svg> 
+                                </button>
+                            </div>
+                            <div class="catalog__selected-item">
+                                Оранжевый
+                                <button class="catalog__selected-cls">
+                                    <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="m15.6 8.4-7.2 7.2M8.4 8.4l7.2 7.2" stroke="#666" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                    </svg> 
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalog__filter filter filter__goods">
+                        <h3 class="filter__title">Фильтры:</h3>
+                        <form class="filter__form">
+                            <div class="filter__block">
+                                <div class="filter__select">
+                                    <button class="filter__btn filter__category" id="select-category">
+                                        Категория
+                                    </button>
+                                </div>
+                                <div class="filter__dropdown filter__dropdown_category">
+                                    <ul class="filter__list">
+                                        <li class="filter__item">
+                                            <label class="filter__label">
+                                                <input class="filter__input" type="checkbox" name="Диваны">
+                                                <span class="filter__check"></span>
+                                                Диваны
+                                            </label>
+                                        </li>
+                                        <li class="filter__item">
+                                            <label class="filter__label">
+                                                <input class="filter__input" type="checkbox" name="Кресла">
+                                                <span class="filter__check"></span>
+                                                Кресла
+                                            </label>
+                                        </li>
+                                        <li class="filter__item">
+                                            <label class="filter__label">
+                                                <input class="filter__input" type="checkbox" name="Пуфы">
+                                                <span class="filter__check"></span>
+                                                Пуфы
+                                            </label>
+                                        </li>
+                                        <li class="filter__item">
+                                            <label class="filter__label">
+                                                <input class="filter__input" type="checkbox" name="Кровати">
+                                                <span class="filter__check"></span>
+                                                Кровати
+                                            </label>
+                                        </li>
+                                        <li class="filter__item">
+                                            <label class="filter__label">
+                                                <input class="filter__input" type="checkbox" name="Тумбы">
+                                                <span class="filter__check"></span>
+                                                Тумбы
+                                            </label>
+                                        </li>
+                                        <li class="filter__item">
+                                            <label class="filter__label">
+                                                <input class="filter__input" type="checkbox" name="Комоды">
+                                                <span class="filter__check"></span>
+                                                Комоды
+                                            </label>
+                                        </li>
+                                        <li class="filter__item">
+                                            <label class="filter__label">
+                                                <input class="filter__input" type="checkbox" name="Стулья">
+                                                <span class="filter__check"></span>
+                                                Стулья
+                                            </label>
+                                        </li>
+                                        <li class="filter__item">
+                                            <label class="filter__label">
+                                                <input class="filter__input" type="checkbox" name="Столы">
+                                                <span class="filter__check"></span>
+                                                Столы
+                                            </label>
+                                        </li>
+                                        <li class="filter__item">
+                                            <label class="filter__label">
+                                                <input class="filter__input" type="checkbox" name="Аксессуары">
+                                                <span class="filter__check"></span>
+                                                Аксессуары
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="filter__block">
+                                <div class="filter__select">
+                                    <button class="filter__btn filter__price price" id="select-price">
+                                        Цена
+                                    </button>
+                                </div>
+                                <div class="filter__dropdown filter__dropdown_price">
+                                    <div class="price__inputs">
+                                        <label class="price__label">
+                                            <span class="price__text">от</span>
+                                            <input class="price__input" id="min-price-filter" type="number" name="min-price"
+                                                min="500" max="299999">
+                                        </label>
+                                        <label class="price__label">
+                                            <span class="price__text">до</span>
+                                            <input class="price__input" id="max-price-filter" type="number" name="max-price"
+                                                min="500" max="299999">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filter__block">
+                                <div class="filter__select">
+                                    <button class="filter__btn filter__sales" id="select-sales">
+                                        Скидка
+                                    </button>
+                                </div>
+                                <div class="filter__dropdown filter__dropdown_sales">
+                                    <ul class="filter__list">
+                                        <li class="filter__item">
+                                            <label class="filter__label">
+                                                <input class="filter__input" type="checkbox" name="more5000">
+                                                <span class="filter__check"></span>
+                                                Более 5 000
+                                            </label>
+                                        </li>
+                                        <li class="filter__item">
+                                            <label class="filter__label">
+                                                <input class="filter__input" type="checkbox" name="less5000">
+                                                <span class="filter__check"></span>
+                                                Менее 5 000
+                                            </label>
+                                        </li>
+                                        <li class="filter__item">
+                                            <label class="filter__label">
+                                                <input class="filter__input" type="checkbox" name="nomatter">
+                                                <span class="filter__check"></span>
+                                                Не важно
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="filter__block">
+                                <div class="filter__select">
+                                    <button class="filter__btn filter__color" id="select-color">
+                                        Цвет
+                                    </button>
+                                </div>
+                                <div class="filter__dropdown filter__dropdown_color">
+                                    <ul class="filter__list">
+                                        <li class="filter__item">
+                                            <label class="filter__label">
+                                                <input class="filter__input" type="checkbox" name="Коричневый">
+                                                <span class="filter__check"></span>
+                                                Коричневый
+                                            </label>
+                                        </li>
+                                        <li class="filter__item">
+                                            <label class="filter__label">
+                                                <input class="filter__input" type="checkbox" name="Черный">
+                                                <span class="filter__check"></span>
+                                                Черный
+                                            </label>
+                                        </li>
+                                        <li class="filter__item">
+                                            <label class="filter__label">
+                                                <input class="filter__input" type="checkbox" name="Бежевый">
+                                                <span class="filter__check"></span>
+                                                Бежевый
+                                            </label>
+                                        </li>
+                                        <li class="filter__item">
+                                            <label class="filter__label">
+                                                <input class="filter__input" type="checkbox" name="Серый">
+                                                <span class="filter__check"></span>
+                                                Серый
+                                            </label>
+                                        </li>
+                                        <li class="filter__item">
+                                            <label class="filter__label">
+                                                <input class="filter__input" type="checkbox" name="Белый">
+                                                <span class="filter__check"></span>
+                                                Белый
+                                            </label>
+                                        </li>
+                                        <li class="filter__item">
+                                            <label class="filter__label">
+                                                <input class="filter__input" type="checkbox" name="Синий">
+                                                <span class="filter__check"></span>
+                                                Синий
+                                            </label>
+                                        </li>
+                                        <li class="filter__item">
+                                            <label class="filter__label">
+                                                <input class="filter__input" type="checkbox" name="Оранжевый">
+                                                <span class="filter__check"></span>
+                                                Оранжевый
+                                            </label>
+                                        </li>
+                                        <li class="filter__item">
+                                            <label class="filter__label">
+                                                <input class="filter__input" type="checkbox" name="Желтый">
+                                                <span class="filter__check"></span>
+                                                Желтый
+                                            </label>
+                                        </li>
+                                        <li class="filter__item">
+                                            <label class="filter__label">
+                                                <input class="filter__input" type="checkbox" name="Зеленый">
+                                                <span class="filter__check"></span>
+                                                Зеленый
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    @@include('partials/goods.html')
+                    <div class="catalog__tabs">
+                        <button class="catalog__btn" id="catalog__btn_1">1</button>
+                        <button class="catalog__btn" id="catalog__btn_2">2</button>
+                        <button class="catalog__btn" id="catalog__btn_3">3</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </main>
     @@include('partials/footer.html')
-  
+</body>
+
+</html>
