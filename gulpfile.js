@@ -1,4 +1,4 @@
-const {src, dest, series, watch} = require('gulp');
+const {src, dest, series, parallel, watch} = require('gulp');
 const concat = require('gulp-concat');
 const htmlMin = require('gulp-htmlmin');
 const autoprefixer = require('gulp-autoprefixer');
@@ -12,7 +12,6 @@ const uglify = require('gulp-uglify-es').default;
 const sourcemaps = require('gulp-sourcemaps');
 const browsersync = require('browser-sync').create();
 const fileInclude = require('gulp-file-include');
-// const autoprefixer = require('gulp-autoprefixer');
 const del = require('del'); 
 
 const fonts = () => {
@@ -31,11 +30,11 @@ const styles = () => {
     ])
     .pipe(sass().on('error', sass.logError))
     .pipe(sourcemaps.init())
-    .pipe(concat('main.css'))
     .pipe(autoprefixer({
         cascade: false,
         overrideBrowsersList: ['last 2 versions']
     }))
+    .pipe(concat('main.css'))
     .pipe(cleanCSS({
         level: 2 // уровень сжатия
     }))
@@ -156,5 +155,5 @@ exports.html = html
 exports.images = images
 exports.svgSprites = svgSprites
 
-exports.default = series(clean, html, fonts, scripts, styles, images, svgSprites, watchFiles)
-exports.dev = series(clean, html, fonts, scriptsDev, stylesDev, images, svgSprites, watchFiles)
+exports.default = series(clean, parallel(html, fonts, scripts,  images, svgSprites), styles, watchFiles)
+exports.dev = series(clean, parallel(html, fonts, scriptsDev,  images, svgSprites), stylesDev, watchFiles)
