@@ -154,6 +154,7 @@
   &:focus-visible {
     background-color: $color-C998FB;
     border-color: $color-7033AC;
+    outline: none;
   }
   &:active {
     background-color: $color-7033AC;
@@ -179,6 +180,7 @@
     color: $color-FFFFFF;
     background-color: $color-C998FB;
     border-color: $color-A65CF0;
+    outline: none;
   }
   &:active {
     color: $color-FFFFFF;

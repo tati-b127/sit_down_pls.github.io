@@ -37,14 +37,14 @@
                             </button>
                             @@include('partials/modal-swiper.html')
                         </div>
-                        <div class="product__modal product__modal_bye">
+                        <div class="product__modal product__modal_bye callback">
                             <button class="product__modal-cls">
                                 <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M15.6 8.3999L8.40002 15.5999" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M8.40002 8.3999L15.6 15.5999" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>                                  
                             </button>
-                            <h3 class="product__modal-title">Купить в один клик</h3>
+                            <h2 class="product__modal-title">Купить в один клик</h2>
                             <p class="product__modal-desc">
                                 Чтобы оформить заказ — заполните формы ниже и наш менеджер свяжется с вами в течении часа.
                             </p>
@@ -74,13 +74,13 @@
                                 </svg>                                  
                             </button>
                             <img src="./images/svg/callback-logo.svg" alt="Логотип">
-                            <h4 class="product__title">Спасибо, мы вам перезвоним!</h4>
+                            <h3 class="product__title">Спасибо, мы вам перезвоним!</h3>
                         </div>
                     </div>
                 </div>
                 <div class="product__block product__block_1">
                     @@include('partials/modal-swiper.html')
-                    <div class="product__block-title">
+                    <div class="product__block-title goods">
                         <div class="product__rating goods__rating">4,8</div>
                         <h2 class="product__name goods__item-title">Диван тканевый прямой “D-31”</h2>
                         <p class="product__subname">Мини 120&nbsp;см без ящика Stark синий (Рогожка)</p>
@@ -89,20 +89,15 @@
                         <button class="product__btn-add-shopping-cart">+ Добавить в корзину</button>   
                     </div>
                     <div class="product__descr">
-                        <h4 class="product__subtitle">Опорный механизм</h4>
-                        <p class="product__desc">Опорный механизм напоминает пантограф, к&nbsp;которому добавили
-                            дополнительную секцию. У&nbsp;опорного дивана сиденье &laquo;выпрыгивает&raquo; вперёд
-                            и&nbsp;вытаскивает вторую часть спального места. Заключительный штрих&nbsp;&mdash; опустить
-                            спинку.
-                            Этот механизм не&nbsp;портит пол и&nbsp;не&nbsp;боится ковров. Требуется чуть больше силы,
-                            чтобы разложить диван, но&nbsp;подросток справится.
+                        <h3 class="product__subtitle">Опорный механизм</h3>
+                        <p class="product__desc">Опорный механизм напоминает пантограф, к которому добавили дополнительную секцию. У опорного дивана сиденье «выпрыгивает» вперёд и вытаскивает вторую часть спального места. Заключительный штрих — опустить спинку. <br> Этот механизм не портит пол и не боится ковров. Требуется чуть больше силы, чтобы разложить диван, но подросток справится.
                         </p>
                         <img class="product__img-exp" src="./images/card-1920-sofa-D31-exp.png"
                             alt="Механизм раскладки">
                     </div>
                 </div>
                 <div class="product__block product__block_2">
-                    <div class="product__block-title">
+                    <div class="product__block-title goods">
                         <div class="product__rating goods__rating">4,8</div>
                         <h2 class="product__name goods__item-title">Диван тканевый прямой “D-31”</h2>
                         <p class="product__subname">Мини 120&nbsp;см без ящика Stark синий (Рогожка)</p>
@@ -220,17 +215,17 @@
                 </div>
             </div>
         </div>
-        <div class="product__similar container">
-            <div class="product__similar-block">
-                <h2 class="product__similar-title">Похожие товары</h2>
-                <div class="product__btn-block">
+        <div class="similar container">
+            <div class="similar__block">
+                <h2 class="similar__title">Похожие товары</h2>
+                <div class="similar__btn-block">
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
                 </div>
             </div>
-            <div class="swiper product__swiper" id="swiper4">
-                <div class="swiper-wrapper product__wrapper">
-                    <div class="swiper-slide product__slide product__slide_1">
+            <div class="swiper similar__swiper" id="swiper4">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide similar__slide goods">
                         <div class="goods__item" id="R-85">
                             <div class="goods__rating">4,5</div>
                             <div class="goods__img"></div>
@@ -242,7 +237,7 @@
                             <a href="#" class="goods__btn">Купить</a>
                         </div>
                     </div>
-                    <div class="swiper-slide product__slide product__slide_2">
+                    <div class="swiper-slide similar__slide goods">
                         <div class="goods__item" id="H-58">
                             <div class="goods__rating">4,6</div>
                             <div class="goods__img"></div>
@@ -254,7 +249,7 @@
                             <a href="#" class="goods__btn">Купить</a>
                         </div>
                     </div>
-                    <div class="swiper-slide product__slide product__slide_3">
+                    <div class="swiper-slide similar__slide goods">
                         <div class="goods__item" id="S-44">
                             <div class="goods__rating">4,5</div>
                             <div class="goods__img"></div>
@@ -266,7 +261,7 @@
                             <a href="#" class="goods__btn">Купить</a>
                         </div>
                     </div>
-                    <div class="swiper-slide product__slide product__slide_4">
+                    <div class="swiper-slide similar__slide goods">
                         <div class="goods__item" id="V-43">
                             <div class="goods__rating">4,8</div>
                             <div class="goods__img"></div>
@@ -278,7 +273,7 @@
                             <a href="#" class="goods__btn">Купить</a>
                         </div>
                     </div>
-                    <div class="swiper-slide product__slide product__slide_5">
+                    <div class="swiper-slide similar__slide goods">
                         <div class="goods__item" id="C-42">
                             <div class="goods__rating">4,6</div>
                             <div class="goods__img"></div>

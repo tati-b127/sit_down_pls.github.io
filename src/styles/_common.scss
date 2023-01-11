@@ -12,7 +12,9 @@
 *:focus-within {
   outline: none;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   max-width: 1920px;
   min-width: 320px;
@@ -189,7 +191,7 @@ body {
   &__burger-menu {
     @include hidden;
     @include flex-column;
-    display: none;
+    // display: none;
     justify-content: flex-start;
     position: absolute;
     top: -25px;
@@ -198,6 +200,7 @@ body {
     // min-height: 300px;
     padding: 34px 72px;
     padding-bottom: 60px;
+    border-bottom: 2px solid $color-F7F7F7;
     background-color: $color-FFFFFF;
     background-image: url(./images/svg/logo-burger.svg);
     background-repeat: no-repeat;
@@ -245,6 +248,10 @@ body {
 
   &__logo-link {
     @include linkReset;
+    grid-column: 1 / span 2;
+    &:focus-visible {
+      outline: 1px solid $color-FF6972;
+    }
   }
   &__logo {
     width: 187px;
@@ -278,9 +285,9 @@ body {
   }
   &__user {
     @include btnReset;
-    width: 26px;
-    height: 28px;
-    margin-right: 32px;
+    width: 30px;
+    height: 36px;
+    margin-right: 40px;
     border: 3px solid transparent;
     background-image: url(./images/svg/user_default.svg);
     background-size: contain;
@@ -307,7 +314,7 @@ body {
     background-image: url(./images/svg/shopping_cart_default.svg);
     background-size: contain;
     background-repeat: no-repeat;
-    transition: background 0.2s ease-in;
+    transition: background-image 0.2s ease-in;
 
     &::before {
       position: absolute;
@@ -385,7 +392,7 @@ body {
     height: 32px;
     border: 2px solid $color-A65CF0;
     border-radius: 100%;
-    right: 20px;
+    right: 36px;
     &::after {
       content: "";
       position: absolute;
@@ -396,6 +403,13 @@ body {
       border-top: 2px solid $color-A65CF0;
       border-right: 2px solid $color-A65CF0;
       transform: rotate(45deg);
+    }
+    &:hover {
+      border-color: $color-7033AC;
+    }
+    &:focus-visible {
+      outline: none;
+      border-color: $color-7033AC;
     }
   }
   &__choice {
@@ -581,7 +595,7 @@ body {
     }
   }
   &__img {
-    height: 265px;
+    height: 252px;
     width: 100%;
     background-repeat: no-repeat;
     background-size: contain;
@@ -933,7 +947,7 @@ body {
         right: -30px;
       }
       &::before {
-        top: 50%;
+        top: 9px;
         left: auto;
         right: -21px;
       }
@@ -1062,7 +1076,7 @@ body {
 }
 .callback {
   padding-top: $mbBlock;
-  padding-bottom: $mbBlock;
+  padding-bottom: 54px;
   &__grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -1352,6 +1366,8 @@ body {
   &__title {
     @include sectionTilte;
     display: inline-block;
+    font-size: 24px;
+    line-height: 32px;
     margin: 0;
     margin-right: 17px;
   }
@@ -1419,11 +1435,12 @@ body {
     margin-bottom: 32px;
   }
   .bread-crumbs {
+    margin-top: -16px;
+    margin-bottom: 30px;
     &__list {
       @include listReset;
       @include flex-row;
       justify-content: flex-start;
-      margin-bottom: 23px;
     }
     &__item:not(:last-child) {
       position: relative;
@@ -1460,7 +1477,7 @@ body {
     }
   }
   .filter {
-    &__goods {
+    &_goods {
       display: none;
       margin-bottom: 16px;
     }
@@ -1470,10 +1487,10 @@ body {
     }
     &__select {
       position: relative;
-      border: 2px solid $color-F7F7F7;
       z-index: 100;
-      background: $color-F7F7F7;
+      border: 2px solid transparent;
       border-radius: 10px;
+      background: $color-F7F7F7;
       overflow: hidden;
     }
     &__block button {
@@ -1485,12 +1502,13 @@ body {
       width: 100%;
       height: 100%;
       text-align: start;
-      border: none;
+      border: 2px solid $color-F7F7F7;
+      border-radius: 8px;
       padding: 9px 15px;
       background: $color-F7F7F7;
-      transition: background 0.2s ease-in;
+      transition: background 0.2s ease-in, border 0.2s ease-in;
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         right: 15px;
         top: 40%;
@@ -1505,13 +1523,8 @@ body {
         background: $color-FFFFFF;
       }
       &:focus-visible {
-        border: 2px solid $color-7033AC;
-        border-radius: 10px;
+        border: 2px solid $color-C998FB;
       }
-      // &::after,
-      // &::before {
-      //   display: none;
-      // }
     }
     .selected {
       background: $color-FFFFFF;
@@ -1562,6 +1575,9 @@ body {
         .price__label:first-child {
           margin-bottom: 12px;
         }
+        .price__input {
+          width: 100%;
+        }
       }
     }
     &__title {
@@ -1570,14 +1586,14 @@ body {
       font-size: 18px;
       line-height: 130%;
       color: $color-333333;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
     &__subtitle {
       font-weight: 600;
       font-size: 16px;
       line-height: 130%;
       color: $color-666666;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
     &__label {
       @include visually-hidden;
@@ -1597,7 +1613,7 @@ body {
       @include listReset;
     }
     &__item {
-      margin-bottom: 10px;
+      margin-bottom: 11px;
     }
     &__input {
       @include visually-hidden;
@@ -1709,12 +1725,78 @@ body {
     color: $color-999999;
     margin-bottom: 12px;
   }
+  &__banner-link {
+    @include linkReset;
+    position: relative;
+    // margin-right: 5px;
+    margin-top: auto;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 120%;
+    color: $color-A65CF0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease-in;
+    &::after {
+      position: absolute;
+      content: "";
+      left: 108%;
+      width: 22px;
+      height: 22px;
+      background-color: transparent;
+      border: 2px solid $color-A65CF0;
+      border-radius: 100%;
+      transition: background 0.2s ease-in, border 0.2s ease-in;
+    }
+    &::before {
+      position: absolute;
+      content: "";
+      left: 118%;
+      top: 48%;
+      width: 5px;
+      height: 5px;
+      border-top: 2px solid $color-A65CF0;
+      border-right: 2px solid $color-A65CF0;
+      transform: rotate(45deg);
+      transition: border 0.2s ease-in;
+      z-index: 10;
+    }
+    &:hover {
+      border-bottom: 2px solid $color-A65CF0;
+      &::after {
+        background-color: $color-A65CF0;
+      }
+      &::before {
+        border-color: $color-FFFFFF;
+      }
+    }
+    &:focus-visible {
+      border-bottom: 2px solid $color-A65CF0;
+      &::after {
+        background-color: $color-C998FB;
+      }
+      &::before {
+        border-color: $color-FFFFFF;
+      }
+    }
+    &:active {
+      border-bottom: 2px solid $color-A65CF0;
+      color: $color-7033AC;
+      &::after {
+        border-color: $color-7033AC;
+        background-color: $color-7033AC;
+      }
+      &::before {
+        border-color: $color-FFFFFF;
+      }
+    }
+  }
 }
 
 // PRODUCT
 
 .product {
   .bread-crumbs {
+    margin-top: -16px;
     &__list {
       @include listReset;
       @include flex-row;
@@ -1779,7 +1861,7 @@ body {
   &__block_2 {
     @include flex-column;
     align-items: flex-start;
-    padding: 32px 0 0;
+    padding: 25px 0 0;
   }
   &__block-title {
     display: flex;
@@ -1787,6 +1869,7 @@ body {
     align-items: flex-start;
     min-height: 332px;
     margin-bottom: 32px;
+    padding: 0;
   }
   &__block_1 {
     .product__block-title {
@@ -1798,7 +1881,7 @@ body {
       width: 100%;
       padding: 16px 0;
       object-fit: contain;
-      max-height: 245px;
+      max-height: 262px;
     }
   }
   &__swiper-1 {
@@ -1807,7 +1890,7 @@ body {
     img {
       width: 100%;
       object-fit: contain;
-      max-height: 61px;
+      height: 61px;
     }
   }
   &__subtitle {
@@ -1929,9 +2012,9 @@ body {
     }
     .product__title {
       font-weight: 400;
-font-size: 32px;
-line-height: 100%;
-color: $color-333333;
+      font-size: 32px;
+      line-height: 100%;
+      color: $color-333333;
     }
   }
   &__modal-cls {
@@ -2032,15 +2115,16 @@ color: $color-333333;
     //   background-position: center bottom;
     // }
   }
-  &__similar {
-    position: relative;
-    padding: 70px 0;
-  }
-  &__similar-block {
+}
+.similar {
+  position: relative;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  &__block {
     display: flex;
     justify-content: space-between;
   }
-  &__similar-title {
+  &__title {
     font-weight: 400;
     font-size: 24px;
     line-height: 130%;
@@ -2051,5 +2135,8 @@ color: $color-333333;
     position: relative;
     height: 32px;
     width: 77px;
+  }
+  &__slide {
+    padding: 0;
   }
 }

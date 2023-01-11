@@ -106,4 +106,3 @@ if (callBackGoods) {
         ])
 };
 window.validation2 = validation2;
-console.log(window.validation2);

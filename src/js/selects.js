@@ -65,3 +65,11 @@ if (filterBtn) {
     });
   });
 };
+const catalogFilerBtnCls = document.querySelectorAll('.catalog__selected-cls');
+if (catalogFilerBtnCls) {
+  catalogFilerBtnCls.forEach((btnCls) => {
+    btnCls.addEventListener('click', (ev) => {
+      btnCls.parentElement.classList.add('hidden');
+    });
+  });
+};
