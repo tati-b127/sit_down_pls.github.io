@@ -135,7 +135,7 @@ body {
     &:hover {
       color: $color-A65CF0;
     }
-    &:focus {
+    &:focus-visible {
       color: $color-7033AC;
       background-color: $color-EBD1FF;
     }
@@ -179,6 +179,7 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     margin-bottom: 40px;
+    flex-shrink: 0;
     filter: grayscale(0);
     transition: filter 0.2s ease-in;
     &:hover {
@@ -194,7 +195,7 @@ body {
     // display: none;
     justify-content: flex-start;
     position: absolute;
-    top: -25px;
+    top: -20px;
     left: 0;
     width: 100%;
     // min-height: 300px;
@@ -466,13 +467,13 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     &_1 {
-      background-image: url(./images/hero_1920-1.jpg);
+      background-image: url(./images/hero_1920-1.webp);
     }
     &_2 {
-      background-image: url(./images/hero_1920-2.jpg);
+      background-image: url(./images/hero_1920-2.webp);
     }
     &_3 {
-      background-image: url(./images/hero_1920-3.jpg);
+      background-image: url(./images/hero_1920-3.webp);
     }
     &_3 .hero__title {
       width: 50%;
@@ -519,49 +520,53 @@ body {
     padding: 30px;
     border-radius: 10px;
     background-color: $color-F7F7F7;
+    picture {
+      align-self: center;
+    }
   }
 
   &__slide {
     // width: 296px !important;
     width: calc(25% - 16px) !important;
     height: auto;
+  
     // margin-right: 32px;
-    &_1 .sales__img {
-      background-image: url(./images/special-1920-X24.png);
-    }
-    &_2 .sales__img {
-      background-image: url(./images/special-1920-Z44.png);
-    }
+    // &_1 .sales__img {
+    //   background-image: url(./images/special-1920-X24.webp);
+    // }
+    // &_2 .sales__img {
+    //   background-image: url(./images/special-1920-Z44.webp);
+    // }
     &_2 {
       width: calc(50% - 32px) !important;
       max-width: 624px;
     }
     &_2 .sales__item {
-      background-image: url(./images/special-1920-Z44-exp.png);
+      background-image: url(./images/special-1920-Z44-exp.webp);
       background-repeat: no-repeat;
       background-position: right 20px bottom 20px;
     }
-    &_3 .sales__img {
-      background-image: url(./images/special-1920-Qyartz23.png);
-    }
-    &_4 .sales__img {
-      background-image: url(./images/special-1920-Dear.png);
-    }
-    &_5 .sales__img {
-      background-image: url(./images/special-1920-Z85.png);
-    }
+    // &_3 .sales__img {
+    //   background-image: url(./images/special-1920-Qyartz23.webp);
+    // }
+    // &_4 .sales__img {
+    //   background-image: url(./images/special-1920-Dear.webp);
+    // }
+    // &_5 .sales__img {
+    //   background-image: url(./images/special-1920-Z85.webp);
+    // }
     &_5 {
       width: calc(50% - 32px) !important;
       max-width: 624px;
     }
     &_5 .sales__item {
-      background-image: url(./images/special-1920-Z85-exp.png);
+      background-image: url(./images/special-1920-Z85-exp.webp);
       background-repeat: no-repeat;
       background-position: right 20px bottom 20px;
     }
-    &_6 .sales__img {
-      background-image: url(./images/special-1920-H18.png);
-    }
+    // &_6 .sales__img {
+    //   background-image: url(./images/special-1920-H18.webp);
+    // }
   }
 
   &__sale {
@@ -597,10 +602,11 @@ body {
   &__img {
     height: 252px;
     width: 100%;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center center;
+    object-fit: contain;
     margin-bottom: 15px;
+    img {
+      width: 100%;
+    }
   }
   &__block-price {
     margin-bottom: 23px;
@@ -648,9 +654,10 @@ body {
 .swiper-button-prev::after {
   position: absolute;
   content: "";
-  left: 37%;
-  width: 9px;
-  height: 9px;
+  left: 42%;
+  top: 40%;
+  width: 7px;
+  height: 7px;
   border-top: 2px solid $color-A65CF0;
   border-right: 2px solid $color-A65CF0;
   transform: rotate(-135deg);
@@ -666,9 +673,10 @@ body {
 .swiper-button-next::after {
   position: absolute;
   content: "";
-  left: 25%;
-  width: 9px;
-  height: 9px;
+  left: 34%;
+  top: 39%;
+  width: 7px;
+  height: 7px;
   border-top: 2px solid $color-A65CF0;
   border-right: 2px solid $color-A65CF0;
   transform: rotate(45deg);
@@ -693,6 +701,9 @@ body {
     padding: 30px;
     border-radius: 10px;
     background-color: $color-F7F7F7;
+    picture {
+      align-self: center;
+    }
   }
   &__item-title {
     @include goodTitle;
@@ -716,65 +727,63 @@ body {
   &__img {
     width: 100%;
     height: 140px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center bottom;
+    object-fit: contain;
     margin-bottom: 20px;
   }
-  &__item#R-94 .goods__img {
-    background-image: url(./images/sofa-1920-R94.png);
-  }
-  &__item#T-75 .goods__img {
-    background-image: url(./images/sofa-1920-T75.png);
-  }
-  &__item#D-31 .goods__img {
-    background-image: url(./images/sofa-1920-D31.png);
-  }
-  &__item#Y-68 .goods__img {
-    background-image: url(./images/sofa-1920-Y68.png);
-  }
-  &__item#W-95 .goods__img {
-    background-image: url(./images/sofa-1920-W95.png);
-  }
-  &__item#G-41 .goods__img {
-    background-image: url(./images/sofa-1920-G41.png);
-  }
-  &__item#V-43 .goods__img {
-    background-image: url(./images/sofa-1920-V43.png);
-  }
-  &__item#S-99 .goods__img {
-    background-image: url(./images/sofa-1920-S99.png);
-  }
-  &__item#F-85 .goods__img {
-    background-image: url(./images/sofa-1920-F85.png);
-  }
-  &__item#H-64 .goods__img {
-    background-image: url(./images/sofa-1920-H64.png);
-  }
-  &__item#H-58 .goods__img {
-    background-image: url(./images/sofa-1920-H58.png);
-  }
-  &__item#R-43 .goods__img {
-    background-image: url(./images/sofa-1920-R43.png);
-  }
-  &__item#C-42 .goods__img {
-    background-image: url(./images/sofa-1920-C42.png);
-  }
-  &__item#U-58 .goods__img {
-    background-image: url(./images/sofa-1920-U58.png);
-  }
-  &__item#F-41 .goods__img {
-    background-image: url(./images/sofa-1920-F41.png);
-  }
-  &__item#R-85 .goods__img {
-    background-image: url(./images/sofa-1920-R85.png);
-  }
-  &__item#S-44 .goods__img {
-    background-image: url(./images/sofa-1920-S44.png);
-  }
-  &__item#C-80 .goods__img {
-    background-image: url(./images/sofa-1920-C80.png);
-  }
+  // &__item#R-94 .goods__img {
+  //   background-image: url(./images/sofa-1920-R94.webp);
+  // }
+  // &__item#T-75 .goods__img {
+  //   background-image: url(./images/sofa-1920-T75.webp);
+  // }
+  // &__item#D-31 .goods__img {
+  //   background-image: url(./images/sofa-1920-D31.webp);
+  // }
+  // &__item#Y-68 .goods__img {
+  //   background-image: url(./images/sofa-1920-Y68.webp);
+  // }
+  // &__item#W-95 .goods__img {
+  //   background-image: url(./images/sofa-1920-W95.webp);
+  // }
+  // &__item#G-41 .goods__img {
+  //   background-image: url(./images/sofa-1920-G41.webp);
+  // }
+  // &__item#V-43 .goods__img {
+  //   background-image: url(./images/sofa-1920-V43.webp);
+  // }
+  // &__item#S-99 .goods__img {
+  //   background-image: url(./images/sofa-1920-S99.webp);
+  // }
+  // &__item#F-85 .goods__img {
+  //   background-image: url(./images/sofa-1920-F85.webp);
+  // }
+  // &__item#H-64 .goods__img {
+  //   background-image: url(./images/sofa-1920-H64.webp);
+  // }
+  // &__item#H-58 .goods__img {
+  //   background-image: url(./images/sofa-1920-H58.webp);
+  // }
+  // &__item#R-43 .goods__img {
+  //   background-image: url(./images/sofa-1920-R43.webp);
+  // }
+  // &__item#C-42 .goods__img {
+  //   background-image: url(./images/sofa-1920-C42.webp);
+  // }
+  // &__item#U-58 .goods__img {
+  //   background-image: url(./images/sofa-1920-U58.webp);
+  // }
+  // &__item#F-41 .goods__img {
+  //   background-image: url(./images/sofa-1920-F41.webp);
+  // }
+  // &__item#R-85 .goods__img {
+  //   background-image: url(./images/sofa-1920-R85.webp);
+  // }
+  // &__item#S-44 .goods__img {
+  //   background-image: url(./images/sofa-1920-S44.webp);
+  // }
+  // &__item#C-80 .goods__img {
+  //   background-image: url(./images/sofa-1920-C80.webp);
+  // }
   &__price {
     font-weight: 400;
     font-size: 16px;
@@ -803,7 +812,7 @@ body {
   padding: 150px 0;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(./images/banner-1920.jpg);
+  background-image: url(./images/banner-1920.webp);
   &__title {
     font-family: "playfair_displayblack", "Times New Roman", Times, serif;
     font-weight: 900;
@@ -893,7 +902,7 @@ body {
       position: absolute;
       content: "";
       left: 118%;
-      top: 48%;
+      top: 47%;
       width: 5px;
       height: 5px;
       border-top: 2px solid $color-A65CF0;
@@ -947,7 +956,6 @@ body {
         right: -30px;
       }
       &::before {
-        top: 9px;
         left: auto;
         right: -21px;
       }
@@ -965,7 +973,7 @@ body {
     }
     &_sofa .top-category__img {
       height: 308px;
-      background-image: url(./images/category-1920-sofa.png);
+      background-image: url(./images/category-1920-sofa.webp);
     }
     &_armchair {
       grid-column: 7 / span 6;
@@ -973,7 +981,7 @@ body {
     }
     &_armchair .top-category__img {
       height: 308px;
-      background-image: url(./images/category-1920-armchair.png);
+      background-image: url(./images/category-1920-armchair.webp);
     }
     &_bed {
       grid-column: 1 / span 4;
@@ -985,21 +993,21 @@ body {
       }
     }
     &_bed .top-category__img {
-      background-image: url(./images/category-1920-bed.png);
+      background-image: url(./images/category-1920-bed.webp);
     }
     &_dresser {
       grid-column: 5 / span 4;
       grid-row: 2;
     }
     &_dresser .top-category__img {
-      background-image: url(./images/category-1920-dresser.png);
+      background-image: url(./images/category-1920-dresser.webp);
     }
     &_chair {
       grid-column: 9 / span 4;
       grid-row: 2;
     }
     &_chair .top-category__img {
-      background-image: url(./images/category-1920-chair.png);
+      background-image: url(./images/category-1920-chair.webp);
     }
   }
 }
@@ -1026,19 +1034,19 @@ body {
     border-radius: 10px;
     background-color: $color-F7F7F7;
     &_1 .articles__img {
-      background-image: url(./images/article-1920-1.jpg);
+      background-image: url(./images/article-1920-1.webp);
     }
     &_2 .articles__img {
-      background-image: url(./images/article-1920-2.jpg);
+      background-image: url(./images/article-1920-2.webp);
     }
     &_3 .articles__img {
-      background-image: url(./images/article-1920-3.jpg);
+      background-image: url(./images/article-1920-3.webp);
     }
     &_4 .articles__img {
-      background-image: url(./images/article-1920-4.jpg);
+      background-image: url(./images/article-1920-4.webp);
     }
     &_5 .articles__img {
-      background-image: url(./images/article-1920-5.jpg);
+      background-image: url(./images/article-1920-5.webp);
     }
   }
   &__img {
@@ -1098,7 +1106,7 @@ body {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
-    background-image: url(./images/market-1920.png);
+    background-image: url(./images/market-1920.webp);
   }
   &__title {
     @include sectionTilte;
@@ -1215,7 +1223,7 @@ body {
   &__checkbox + .callback__check::before {
     position: absolute;
     content: url(./images/svg/check-agree.svg);
-    top: -3px;
+    top: -4px;
     left: 1px;
     opacity: 0;
     transition: opacity 0.2s ease-in;
@@ -1498,6 +1506,7 @@ body {
       position: relative;
       margin: 0;
       outline: none;
+      color: $color-333333;
       overflow: auto;
       width: 100%;
       height: 100%;

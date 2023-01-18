@@ -58,13 +58,13 @@
   }
   .hero {
     &__slide_1 {
-      background-image: url(./images/hero_1024-1.jpg);
+      background-image: url(./images/hero_1024-1.webp);
     }
     &__slide_2 {
-      background-image: url(./images/hero_1024-2.jpg);
+      background-image: url(./images/hero_1024-2.webp);
     }
     &__slide_3 {
-      background-image: url(./images/hero_1024-3.jpg);
+      background-image: url(./images/hero_1024-3.webp);
       .hero__title {
         width: 80%;
       }
@@ -105,7 +105,7 @@
     }
   }
   .banner {
-    background-image: url(./images/banner-1024.jpg);
+    background-image: url(./images/banner-1024.webp);
   }
   .top-category {
     &__img {
@@ -139,25 +139,25 @@
       }
       &_sofa .top-category__img {
         // height: 310px;
-        background-image: url(./images/category-1024-sofa.png);
+        background-image: url(./images/category-1024-sofa.webp);
       }
       &_bed .top-category__img {
         // height: 310px;
         width: calc(100% + 60px);
-        background-image: url(./images/category-1024-bed.png);
+        background-image: url(./images/category-1024-bed.webp);
         background-size: cover;
       }
       &_armchair .top-category__img {
         // height: 310px;
-        background-image: url(./images/category-1024-armchair.png);
+        background-image: url(./images/category-1024-armchair.webp);
       }
       &_dresser .top-category__img {
         // height: 298px;
-        background-image: url(./images/category-1024-dresser.png);
+        background-image: url(./images/category-1024-dresser.webp);
       }
       &_chair .top-category__img {
         height: 298px;
-        background-image: url(./images/category-1024-chair.png);
+        background-image: url(./images/category-1024-chair.webp);
       }
     }
   }
@@ -177,19 +177,19 @@
       min-height: auto;
     }
     &__slide_1 .articles__img {
-      background-image: url(./images/article-1024-1.jpg);
+      background-image: url(./images/article-1024-1.webp);
     }
     &__slide_2 .articles__img {
-      background-image: url(./images/article-1024-2.jpg);
+      background-image: url(./images/article-1024-2.webp);
     }
     &__slide_3 .articles__img {
-      background-image: url(./images/article-1024-3.jpg);
+      background-image: url(./images/article-1024-3.webp);
     }
     &__slide_4 .articles__img {
-      background-image: url(./images/article-1024-4.jpg);
+      background-image: url(./images/article-1024-4.webp);
     }
     &__slide_5 .articles__img {
-      background-image: url(./images/article-1024-5.jpg);
+      background-image: url(./images/article-1024-5.webp);
     }
     &__btn-block {
       right: 36px;
@@ -392,7 +392,7 @@
       grid-column: 5 / span 2;
     }
     &__img {
-      background-image: url(./images/market-768.png);
+      background-image: url(./images/market-768.webp);
     }
   }
   .footer {
@@ -556,6 +556,9 @@
       margin-bottom: 5px;
     }
   }
+  .footer__block:not(:last-child) {
+    margin-right: 20px;
+  }
   .articles {
     &__btn-block {
       top: 105%;
@@ -585,6 +588,7 @@
       padding: 34px 12px;
       .header__menu {
         flex-wrap: nowrap;
+        height: auto;
       }
       .header__about {
         padding: 24px 12px;
@@ -649,6 +653,9 @@
     &__user {
       margin-right: 20px;
     }
+    &__nav {
+      overflow-y: auto;
+    }
   }
   .search {
     &__input {
@@ -677,13 +684,13 @@
       }
     }
     &__slide_1 {
-      background-image: url(./images/hero_320-1.jpg);
+      background-image: url(./images/hero_320-1.webp);
     }
     &__slide_2 {
-      background-image: url(./images/hero_320-2.jpg);
+      background-image: url(./images/hero_320-2.webp);
     }
     &__slide_3 {
-      background-image: url(./images/hero_320-3.jpg);
+      background-image: url(./images/hero_320-3.webp);
     }
     &__title {
       font-size: 20px;
@@ -759,11 +766,24 @@
       margin-left: -16px;
       margin-top: auto;
     }
-    &__item {
-      padding: 16px;
-    }
     &__link {
       display: none;
+      &::before {
+        top: 52%;
+      }
+    }
+    &__item {
+      padding: 16px;
+      &_sofa {
+        .top-category__link::before {
+          top: 48%;
+        }
+      }
+      &_dresser {
+        .top-category__link::before {
+          top: 25%;
+        }
+      }
     }
     &__block {
       .top-category__link {
@@ -844,6 +864,9 @@
     }
   }
   .footer {
+    &__block {
+      margin: 0;
+    }
     &__block-links {
       display: grid;
       grid-row: 2 / span 2;

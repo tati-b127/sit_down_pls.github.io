@@ -236,20 +236,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const burger = document.querySelector('.header__burger')
     const burgerCls = document.querySelector('.header__burger-cls')
     const menu = document.querySelector('.header__burger-menu')
-
+    let width = document.body.clientWidth
     burger.addEventListener('click', () => {
         menu.classList.toggle('burger-active')
-        console.log(menu)
-    })
+        console.log(width)
+        if (width < 520) {
+            document.body.style.overflowY = 'hidden';
+        }
+    });
     burgerCls.addEventListener('click', () => {
         menu.classList.toggle('burger-active')
-    })
+        if (width < 520) {
+            document.body.style.overflowY = 'visible';
+        }
+    });
 
 
     const goodsItems = document.querySelectorAll('.goods__item')
     console.log(goodsItems)
     const btnMore = document.querySelector('.goods__btn-more')
-    let width = document.body.clientWidth
     console.log(width)
     let itemsToShow = 8;
     let itemsNextToShow = 4;

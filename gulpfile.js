@@ -13,6 +13,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const browsersync = require('browser-sync').create();
 const fileInclude = require('gulp-file-include');
 const del = require('del'); 
+const webp = require('gulp-webp');
 
 const fonts = () => {
     return src('src/fonts/**')
@@ -81,7 +82,8 @@ const images = () => {
         'src/img/**/*.webp',
         'src/img/**/*.ico'
     ])
-    .pipe(image())
+    // .pipe(image())
+    .pipe(webp())
     .pipe(dest('dist/images/'))
 }
 
