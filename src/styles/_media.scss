@@ -906,6 +906,9 @@
     .filter__block:not(:last-child) {
       margin-right: 16px;
     }
+    .filter__input + .filter__check::before {
+      top: 3px;
+    }
     &__bread-crumbs {
       display: none;
     }
